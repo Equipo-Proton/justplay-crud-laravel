@@ -6,7 +6,7 @@
   $numberOfUsers = count($event->user);
   $currentSpaces = $eventSpaces - $numberOfUsers;
   ?>
-  <div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700">
+  <div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700 mb-4">
     <div class="relative">
       <a href="{{ route('showEvent', $event->id) }}">
         <button class="absolute p-1 w-full flex justify-end" type="button">
@@ -30,7 +30,7 @@
         </a>
       @endif
       @if($currentSpaces == 0)
-        Completed
+        <p class="btn btn-danger uppercase">Completed</p>
         @endif
         @if(Auth::check() && Auth::user()->event->contains($event->id))
           <a href="{{ route('cancelInscription', $event->id) }}" class="me-auto items-center py-2 px-3 ml-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-red-800">

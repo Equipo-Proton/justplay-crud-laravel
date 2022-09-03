@@ -16,6 +16,7 @@
 @import 'components/header';
 @import 'components/myEvents';
 @import 'components/congrats';
+@import 'components/current';
 
 
 * {
@@ -33,4 +34,5 @@ a {
 
 main {
     min-height: 75vh;
+    padding-bottom: 20px;
 }
