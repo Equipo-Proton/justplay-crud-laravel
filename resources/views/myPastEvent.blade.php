@@ -6,8 +6,8 @@
 
 <?php
 $pastEvents = [];
-foreach($eventsOfUser as $eventOfUser) {
-  if($eventOfUser->event_date < now()) {
+foreach ($eventsOfUser as $eventOfUser) {
+  if ($eventOfUser->event_date < now()) {
     array_push($pastEvents, $eventOfUser);
   }
 }
@@ -31,7 +31,7 @@ $countEventsUser = count($pastEvents);
     <img class="object-cover w-full h-200 rounded-t-sm ms:h-auto sm:w-48 sm:rounded-none md:rounded-none sm" src="{{ $eventOfUser->img }}" alt="Event Image">
 
     <div id="paragraph" class="flex flex-col justify-between p-4 leading-normal max-w-screen-md">
-      <div class="max-w-screen-sm flex justify-between items-center w-screen bg-gray-400 p-2 mt-4 title">
+      <div class="max-w-screen-sm flex justify-between items-center min-w-full bg-gray-400 p-2 mt-4 title">
         <h5 class="w-full text-xl font-bold tracking-tight text-gray-900 dark:text-black uppercase">{{$eventOfUser->title}}</h5>
       </div>
       <p class="mb-3 font-normal text-gray-700  bg-gray-200 p-2 "> {{ $eventOfUser->description }}</p>
