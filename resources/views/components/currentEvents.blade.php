@@ -7,14 +7,14 @@
   $currentSpaces = $eventSpaces - $numberOfUsers;
   ?>
   <div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700 mb-4">
-    <div class="relative">
+    <div  class="relative">
       <a href="{{ route('showEvent', $event->id) }}">
         <button class="absolute p-1 w-full flex justify-end" type="button">
           <img src="{{ asset('img/information.png') }}" alt="information" class="w-7 h-auto items-center p-0">
         </button>
       </a>
-      <a href="#">
-        <img class="rounded-t-lg p-0" src="{{ $event->img }}" alt="" />
+      <a href="{{ route('showEvent', $event->id) }}">
+        <img  class="rounded-t-lg p-0" src="{{ $event->img }}" alt="" />
       </a>
     </div>
     <div class="p-3">
