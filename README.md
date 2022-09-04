@@ -1,5 +1,5 @@
 JustPlay
-<img src="public/img/icono.png" style="display: inline; margin-left: 10px;">
+<img src="public/img/icono.png" style="margin-left: 30px;">
 ============
 
 ***
