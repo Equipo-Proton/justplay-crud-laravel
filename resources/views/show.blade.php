@@ -10,6 +10,7 @@ $numberOfUsers = count($event->user);
 $currentSpaces = $eventSpaces - $numberOfUsers;
 ?>
 
+<div class="divCenter">
 <section class="cardSection">
    <div class="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" id="card">
       <div class="rounded-t-lg" id="imgDiv" style="background-image: url('{{ $event->img }}'); opacity: 0.7;">
@@ -39,5 +40,6 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
       </div>
    </div>
 </section>
+</div>
 
 @endsection
