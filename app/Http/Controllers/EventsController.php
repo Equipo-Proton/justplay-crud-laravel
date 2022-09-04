@@ -19,13 +19,13 @@ class EventsController extends Controller
      */
     public function index()
     {
-        //
-
         $events = Event::where('event_date', '>', now())
             ->orderBy('event_date', 'DESC')->paginate(6);
-        
+
+        $events = Event::getTotalUsersOfEvent($events);
+
         $carouselEvents = Event::get();
- 
+
         return view('home', compact('events', 'carouselEvents'));
     }
 
@@ -36,8 +36,6 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
-
         return view('create');
     }
 
@@ -49,7 +47,6 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-
         if ($request->carousel != 'on') {
             $request->carousel = '0';
         }
@@ -79,8 +76,6 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        //
-
         $event = Event::find($id);
 
         return view('show', compact('event'));
@@ -94,8 +89,6 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        //
-
         $event = Event::find($id);
 
         return view('edit', compact('event'));
@@ -110,8 +103,6 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-
         $event = request()->except('_token', '_method');
         Event::where('id', '=', $id)->update($event);
 
@@ -130,69 +121,41 @@ class EventsController extends Controller
         return redirect()->route('home');
     }
 
-    // METHODS
-
-    // TO GET PAST EVENTS IN GENERAL
-
     public function getPastEvents()
     {
-
         $events = Event::where('event_date', '<', now())
             ->orderBy('event_date', 'DESC')->paginate(6);
 
         return view('pastEvents', compact('events'));
     }
 
-    // TO GET PAST EVENTS OF THE USER
-
     public function myEventsView()
     {
-       /*  $events = Event::get(); */
-
         $eventsOfUser = User::getEventsOfUser();
 
         return view('myEvents', compact('eventsOfUser'));
     }
 
-    // TO GET PAST EVENTS OF THE USER
-    public function getMyPastEvents() {
-        $events = Event::get();
-           
-        
-        $eventsOfUser = [];
-        if (Auth::user()) {
-            $user = Auth::user();
-            $eventsOfUser = $user->event;
-        }
+    public function getMyPastEvents()
+    {
+        $eventsOfUser = User::getEventsOfUser();
 
         return view('myPastEvent', compact('eventsOfUser'));
     }
 
-    // TO INSCRIBE
     public function inscribe($id)
     {
-       /*  $events = Event::get(); */
         $event = Event::find($id);
-        $totalUsersOfEvent = $event->user();
         $user = User::find(Auth::id());
-        $userEvents = $user->event()->find($id);
-       
         
-        if($totalUsersOfEvent->count() >= $event->spaces) {
-            return view('sorry');
-        }
         $user->event()->attach($id);
-        $event = Event::find($id);
-      /*   $username = $user->name; */
-       /*  $mail = new InscriptionMailable($username, $event); 
+        
+        /*   $username = $user->name; */
+        /*  $mail = new InscriptionMailable($username, $event); 
          Mail::to($user->email)->send($mail);  */
 
         return view('congrats', compact('event'));
-       
-        
     }
-
-
 
     public function cancelInscription($id)
     {
@@ -204,7 +167,6 @@ class EventsController extends Controller
         return redirect()->route('home');
     }
 
-    // CAROUSEL
     public function feature($id)
     {
         Event::where('id', '=', $id)->update(array('carousel' => '1'));

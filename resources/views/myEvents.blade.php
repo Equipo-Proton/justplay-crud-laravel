@@ -28,6 +28,12 @@ $countEventsUser = count($currentEvents);
 
 
 @foreach ($eventsOfUser as $eventOfUser)
+
+<?php
+$eventSpaces = $eventOfUser->spaces;
+$numberOfUsers = count($eventOfUser->user);
+$currentSpaces = $eventSpaces - $numberOfUsers;
+?>
   @if ($eventOfUser->event_date > now())
   <section class="flex flex-col items-center mx-2 md:flex-row my-4">
     <div class="card m-2">
@@ -50,7 +56,7 @@ $countEventsUser = count($currentEvents);
 
     <div id="spaces" class="flex flex-center px-2">
       <p>Spaces</p>
-      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{$eventOfUser->spaces}}</p>
+      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{ $currentSpaces }}</p>
     </div>
   </section>
   @endif

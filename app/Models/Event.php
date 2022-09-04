@@ -23,5 +23,14 @@ class Event extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    static function getTotalUsersOfEvent($events) {
+        foreach($events as $event) {
+            $eventSpaces = $event->spaces;
+            $numberOfUsers = count($event->user);
+            $event->spaces = $eventSpaces - $numberOfUsers;
+        }
+        return $events;
+    }
    
 }
