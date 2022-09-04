@@ -1,6 +1,6 @@
 <div id="box" class="grid md:grid-cols-3 justify-items-center">
 @foreach ($events as $event)
-@if ($event->event_date < now())
+
 <div class="max-w-xs m-4 bg-white rounded-lg border border-gray-200 shadow-md  dark:border-gray-700">
     <div class="relative"> 
       <a href="{{ route('showEvent', $event->id) }}">
@@ -23,6 +23,9 @@
         </div>
     </div>
 </div>
-@endif
+
 @endforeach
+</div>
+<div class="d-flex justify-content-center align-items-center">
+  {!! $events->links() !!}
 </div>

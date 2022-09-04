@@ -1,6 +1,6 @@
 <div id="box" class="grid md:grid-cols-3 justify-items-center m-2">
   @foreach ($events as $event)
-  @if ($event->event_date > now())
+
   <?php
   $eventSpaces = $event->spaces;
   $numberOfUsers = count($event->user);
@@ -69,7 +69,7 @@
       </div>
     </div>
   </div>
-  @endif
+
   @endforeach
 </div>
 <div class="d-flex justify-content-center align-items-center">

@@ -44,7 +44,8 @@ class DatabaseSeeder extends Seeder
         Event::factory()->create(['title' => 'Event test', 'description' => 'Learn JavaScript', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 8, 'event_date' => '2000-11-09']);
         Event::factory()->create(['title' => 'Event test', 'description' => 'Learn by doing with our JS game', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 9, 'event_date' => '2021-11-09']);
         Event::factory()->create(['title' => 'Event test', 'description' => 'Learn JavaScript', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 8, 'event_date' => '2000-11-09']);
-        Event::factory()->create(['title' => 'Event test', 'description' => 'Learn JavaScript', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 8, 'event_date' => '2000-11-09']);
+        Event::factory()->create(['title' => 'Event test', 'description' => 'Learn JavaScript', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 8, 'event_date' => '2002-11-09']);
+        Event::factory()->create(['title' => 'Event test', 'description' => 'Learn JavaScript', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 8, 'event_date' => '2001-11-09']);
         Event::factory()->create(['title' => 'Event test', 'description' => 'Learn JavaScript', 'img' => 'https://via.placeholder.com/640x480.png/00ff44?text=commodi', 'spaces' => 8, 'event_date' => '2000-11-09']);
 
         User::factory()->create(['name'=>'admin', 'email'=>'admin@admin.com', 'isAdmin'=>true]);

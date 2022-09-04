@@ -21,9 +21,9 @@ class EventsController extends Controller
     {
         //
 
-        $events = Event::orderBy('event_date', 'DESC')
-            ->paginate(6);
-
+        $events = Event::where('event_date', '>', now())
+            ->orderBy('event_date', 'DESC')->paginate(6);
+        
         $carouselEvents = Event::get();
  
         return view('home', compact('events', 'carouselEvents'));
@@ -137,8 +137,8 @@ class EventsController extends Controller
     public function getPastEvents()
     {
 
-        $events = Event::orderBy('event_date', 'DESC')
-            ->get();
+        $events = Event::where('event_date', '<', now())
+            ->orderBy('event_date', 'DESC')->paginate(6);
 
         return view('pastEvents', compact('events'));
     }
