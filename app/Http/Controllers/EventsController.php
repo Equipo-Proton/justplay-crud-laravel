@@ -147,13 +147,9 @@ class EventsController extends Controller
 
     public function myEventsView()
     {
-        $events = Event::get();
+       /*  $events = Event::get(); */
 
-        $eventsOfUser = [];
-        if (Auth::user()) {
-            $user = Auth::user();
-            $eventsOfUser = $user->event;
-        }
+        $eventsOfUser = User::getEventsOfUser();
 
         return view('myEvents', compact('eventsOfUser'));
     }
