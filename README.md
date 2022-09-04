@@ -1,5 +1,5 @@
 JustPlay
-<img src="http://127.0.0.1:8000/img/justplay.png" style="display: inline;">
+<img src="public/img/icono.png" style="display: inline; margin-left: 10px;">
 ============
 
 ***
