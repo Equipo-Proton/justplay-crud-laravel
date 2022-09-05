@@ -118,47 +118,4 @@ class CrudTest extends TestCase
 
         $response->assertSee($event->name);
     }
-
-    public function test_a_user_can_subscribe()
-    {
-        $event = Event::factory()->create();
-        $user1 = User::factory()->create();
-        $user2 = User::factory()->create();
-        
-        $this->actingAs($user1);
-        $response = $this->get(route('inscribe',$event->id));
-
-        $this->actingAs($user2);
-        $response = $this->get(route('inscribe',$event->id));
-
-        $this->assertEquals($user2->id, $event->user[1]->id);
-    }
-
-    public function test_a_user_can_unsubscribe()
-    {
-        $event = Event::factory()->create();
-        $user = User::factory()->create();
-        
-        $this->actingAs($user);
-        $response = $this->get(route('inscribe',$event->id));
-
-        $this->assertEquals($user->id, $event->user[0]->id);
-
-        $this->actingAs($user);
-        $response = $this->get(route('cancelInscription',$event->id));
-
-        $this->assertNotEquals($event->user, 0);
-    }
-    
-    public function test_userCantInscribeOnFullEvent()
-    {
-        $event = Event::factory()->create(['spaces' => 0]);
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
-        $response = $this->get(route('inscribe', $event->id));
-
-        $this->assertNotEquals($event->user, 0);
-        $this->assertEquals($event->spaces, 0);
-    }
 }
