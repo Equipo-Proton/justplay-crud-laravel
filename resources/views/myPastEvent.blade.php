@@ -5,13 +5,7 @@
 @section('content')
 
 <?php
-$pastEvents = [];
-foreach ($eventsOfUser as $eventOfUser) {
-  if ($eventOfUser->event_date < now()) {
-    array_push($pastEvents, $eventOfUser);
-  }
-}
-$countEventsUser = count($pastEvents);
+$countEventsUser = count($eventsOfUser);
 ?>
 
 <p class="text-center" style="padding-top: 24px; font-size:24px" >You have attended {{ $countEventsUser }} events.</p>
@@ -28,11 +22,6 @@ $countEventsUser = count($pastEvents);
 <div>
   @foreach ($eventsOfUser as $eventOfUser)
 
-  <?php
-$eventSpaces = $eventOfUser->spaces;
-$numberOfUsers = count($eventOfUser->user);
-$currentSpaces = $eventSpaces - $numberOfUsers;
-?>
   @if ($eventOfUser->event_date < now()) <a href="{{ route('showEvent', $eventOfUser->id) }}" class="flex flex-col items-center mx-20 md:flex-row md:max-w-sm">
     <img class="object-cover w-full h-200 rounded-t-sm ms:h-auto sm:w-48 sm:rounded-none md:rounded-none sm" src="{{ $eventOfUser->img }}" alt="Event Image">
 
@@ -45,7 +34,7 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
 
     <div id="spaces" class="flex flex-center px-10">
       <p>Spaces</p>
-      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{$currentSpaces}}</p>
+      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{$eventOfUser->spaces }}</p>
     </div>
     </a>
     @endif

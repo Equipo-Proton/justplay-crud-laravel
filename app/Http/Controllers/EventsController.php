@@ -133,12 +133,16 @@ class EventsController extends Controller
     {
         $eventsOfUser = User::getEventsOfUser();
 
+        $eventsOfUser = Event::getTotalUsersOfEvent($eventsOfUser);
+
         return view('myEvents', compact('eventsOfUser'));
     }
 
     public function getMyPastEvents()
     {
         $eventsOfUser = User::getEventsOfUser();
+
+        $eventsOfUser = Event::getTotalUsersOfEvent($eventsOfUser);
 
         return view('myPastEvent', compact('eventsOfUser'));
     }
