@@ -55,7 +55,7 @@ class EventsController extends Controller
         }
 
         $event = request()->except('_token');
-
+        
         $event = Event::create([
             'event_date' => $request->event_date,
             'title' => $request->title,

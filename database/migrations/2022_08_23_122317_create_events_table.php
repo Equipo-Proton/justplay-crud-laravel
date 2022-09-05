@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
 
-            $table->string('title', 150);
-            $table->string('description', 250);
-            $table->string('img');
-            $table->integer('spaces');
-            $table->date('event_date');
-            $table->boolean('carousel')->default(false);
+            $table->string('title', 150)->nullable();
+            $table->string('description', 250)->nullable();
+            $table->string('img')->nullable();
+            $table->integer('spaces')->nullable();
+            $table->date('event_date')->nullable();
+            $table->boolean('carousel')->default(false)->nullable();
 
             $table->timestamps();
         });
