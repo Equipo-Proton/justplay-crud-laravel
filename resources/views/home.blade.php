@@ -18,7 +18,7 @@
 @endif
 
 <section class="m-6 grid justify-items-center text-2xl">
-  <h2 class="text-center ">EVENT LIST</h2>
+  <h2 class="text-center ">EVENTS LIST</h2>
   <div class="bg-green-600 h-1 w-20"></div>
 </section>
 <section class="flex m-4">
