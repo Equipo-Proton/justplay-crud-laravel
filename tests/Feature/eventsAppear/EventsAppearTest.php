@@ -42,7 +42,7 @@ class EventsAppear extends TestCase
         ]);
         $response = $this->get('/past');
         $response->assertStatus(200)
-            ->assertViewIs('pastevents')
+            ->assertViewIs('pastEvents')
             ->assertSee('Football Match');
     }
 
