@@ -8,7 +8,7 @@
         <img src="{{ asset('img/information.png') }}" alt="information" class="w-9 h-auto items-center p-0">
       </button>
       </a>
-      <a href="#">
+      <a href="{{ route('showEvent', $event->id) }}">
         <img class="rounded-t-lg p-0" src="{{ $event->img }}" alt="" />
       </a>
     </div> 

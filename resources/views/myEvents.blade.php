@@ -5,17 +5,10 @@
 @section('content')
 
 <?php
-
-$currentEvents = [];
-foreach ($eventsOfUser as $eventOfUser) {
-  if ($eventOfUser->event_date > now()) {
-    array_push($currentEvents, $eventOfUser);
-  }
-}
-$countEventsUser = count($currentEvents);
+$countEventsUser = count($eventsOfUser);
 ?>
 
-<p>You are subscribed to {{ $countEventsUser }} at this moment.</p>
+<p class="text-center" style="padding-top: 24px; font-size:24px" >You are subscribed to {{ $countEventsUser }} at this moment.</p>
 
 <div class="my_events_page d-flex justify-content-around my-4">
   <div class="My Events font-extrabold hover:font-bold">
@@ -29,11 +22,6 @@ $countEventsUser = count($currentEvents);
 
 @foreach ($eventsOfUser as $eventOfUser)
 
-<?php
-$eventSpaces = $eventOfUser->spaces;
-$numberOfUsers = count($eventOfUser->user);
-$currentSpaces = $eventSpaces - $numberOfUsers;
-?>
   @if ($eventOfUser->event_date > now())
   <section id="centerBox" class="flex justify-center flex-col items-center  md:flex-row">
     <div class="card m-2">
@@ -56,7 +44,7 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
 
     <div id="spaces" class="flex flex-center px-2">
       <p>Spaces</p>
-      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{ $currentSpaces }}</p>
+      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{ $eventOfUser->spaces }}</p>
     </div>
   </section>
   @endif
