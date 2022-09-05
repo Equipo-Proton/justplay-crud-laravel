@@ -107,7 +107,7 @@ To execute tests uncomment 2 lines of "phpunit.xml":
 ## 🛠️ Prototype
 
 <p align="center"> 
-<img src="./public/img/pagina-principal(1).png" width=25% style="height: 300px;">
+<img src="./public/img/pagina-principal(1).png" width=25% style="height: 3500px;">
 <img src="./public/img/movilhome.jpg" width=25%>
 </p>
 
