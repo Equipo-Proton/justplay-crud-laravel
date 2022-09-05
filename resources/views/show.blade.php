@@ -12,15 +12,15 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
 
 
 <section id="center" class="cardSection">
-   <div class="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" id="card">
-      <div class="rounded-t-lg" id="imgDiv" style="background-image: url('{{ $event->img }}'); opacity: 0.7; background-size: 100% 100%;">
+   <div class="max-w-sm m-2 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" id="card">
+      <div class="rounded-t-lg" id="imgDiv" style="background-image: url('{{ $event->img }}'); opacity: 0.8; background-size: 100% 100%;">
          <div class="timeSpaces">
             <div class="fs-4 text-white">{{ $event->event_date }}</div>
             <div class="fs-4 text-white">Quedan {{ $currentSpaces }} cupos</div>
          </div>
       </div>
-      <div class="p-5">
-         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-dark" id="title">{{ $event->title }}</h5>
+      <div class="px-5 py-1">
+         <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-dark" id="title">{{ $event->title }}</h3>
          <p class="mb-4 font-normal text-black-700 dark:text-black-400" id="description">{{ $event->description }}</p>
          <div class="buttons d-flex justify-content-around">
             @if(!Auth::user() || (Auth::check() && !Auth::user()->event->contains($event->id)))
