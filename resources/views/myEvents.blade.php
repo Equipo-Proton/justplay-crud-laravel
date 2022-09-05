@@ -5,23 +5,16 @@
 @section('content')
 
 <?php
-
-$currentEvents = [];
-foreach ($eventsOfUser as $eventOfUser) {
-  if ($eventOfUser->event_date > now()) {
-    array_push($currentEvents, $eventOfUser);
-  }
-}
-$countEventsUser = count($currentEvents);
+$countEventsUser = count($eventsOfUser);
 ?>
 
-<p>You are subscribed to {{ $countEventsUser }} at this moment.</p>
+<p class="text-center" style="padding-top: 24px; font-size:24px" >You are subscribed to {{ $countEventsUser }} at this moment.</p>
 
-<div class="my_events_page inline-flex mx-2 ">
-  <div class="My Events  ml-0 mr-20 p-3 hover:font-bold">
-    <button type="button">My Events</button>
+<div class="my_events_page d-flex justify-content-around my-4">
+  <div class="My Events font-extrabold hover:font-bold">
+    <button type="button" class="">My Events</button>
   </div>
-  <div class="Past Events ml-20 p-3 hover:font-bold">
+  <div class="Past Events  hover:font-bold">
     <a href="{{ route('myPastEvents') }}"><button type="button">Past Events</button></a>
   </div>
 </div>
@@ -29,13 +22,8 @@ $countEventsUser = count($currentEvents);
 
 @foreach ($eventsOfUser as $eventOfUser)
 
-<?php
-$eventSpaces = $eventOfUser->spaces;
-$numberOfUsers = count($eventOfUser->user);
-$currentSpaces = $eventSpaces - $numberOfUsers;
-?>
   @if ($eventOfUser->event_date > now())
-  <section class="flex flex-col items-center mx-2 md:flex-row my-4">
+  <section id="centerBox" class="flex justify-center flex-col items-center  md:flex-row">
     <div class="card m-2">
       <img class="object-cover w-full h-200 rounded-t-sm ms:h-auto sm:w-48 sm:rounded-none md:rounded-none sm p-0 card-img" src="{{ $eventOfUser->img }}" alt="Event Image">
       <div class="card-img-overlay text-white flex justify-end items-end">
@@ -56,7 +44,7 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
 
     <div id="spaces" class="flex flex-center px-2">
       <p>Spaces</p>
-      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{ $currentSpaces }}</p>
+      <p class="border border-black rounded-xl bg-gray-200 px-4 my-3">{{ $eventOfUser->spaces }}</p>
     </div>
   </section>
   @endif

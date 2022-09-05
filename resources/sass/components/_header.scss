@@ -8,17 +8,15 @@ header {
     .left-header{
         display:flex;
     }
-    .right-header{
+     #myeventsbutton {
         display:flex;
-        padding-right: 10px;
     }
     
     @media (max-width: 768px) {
-    .find{
-        display:none;
+     .find{
+       display:none;
+     }
     }
-}
-    
 }
 
 img{
