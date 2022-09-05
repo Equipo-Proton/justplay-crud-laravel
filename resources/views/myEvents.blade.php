@@ -5,14 +5,7 @@
 @section('content')
 
 <?php
-
-$currentEvents = [];
-foreach ($eventsOfUser as $eventOfUser) {
-  if ($eventOfUser->event_date > now()) {
-    array_push($currentEvents, $eventOfUser);
-  }
-}
-$countEventsUser = count($currentEvents);
+$countEventsUser = count($eventsOfUser);
 ?>
 
 <p class="text-center" style="padding-top: 24px; font-size:24px" >You are subscribed to {{ $countEventsUser }} at this moment.</p>
@@ -28,7 +21,6 @@ $countEventsUser = count($currentEvents);
 
 
 @foreach ($eventsOfUser as $eventOfUser)
-
 <?php
 $eventSpaces = $eventOfUser->spaces;
 $numberOfUsers = count($eventOfUser->user);
