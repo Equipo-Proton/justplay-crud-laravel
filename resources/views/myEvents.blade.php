@@ -8,7 +8,7 @@
 $countEventsUser = count($eventsOfUser);
 ?>
 
-<p class="text-center" style="padding-top: 24px; font-size:24px" >You are subscribed to {{ $countEventsUser }} at this moment.</p>
+<p class="text-center" style="padding-top: 24px; font-size:24px" >You are subscribed to {{ $countEventsUser }} events at this moment.</p>
 
 <div class="my_events_page d-flex justify-content-around my-4">
   <div class="My Events font-extrabold hover:font-bold">

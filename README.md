@@ -104,6 +104,14 @@ To execute tests uncomment 2 lines of "phpunit.xml":
 - OK (8 tests, 13 assertions)
 
 
+## 🛠️ Prototype
+
+<p align="center"> 
+<img src="./public/img/pagina-principal(1).png" width=25% style="height: 450px;">
+<img src="./public/img/movilhome.jpg" width=25%>
+</p>
+
+
 ## Work methodology
 
 - TDD
@@ -133,7 +141,7 @@ To execute tests uncomment 2 lines of "phpunit.xml":
 - [Dailys](https://docs.google.com/document/d/1liH84SXscXYY4BS_w1ZbWIWB2hXiuaR0V_ZfhH4nhOI/edit?usp=sharing)
 - [Presentation PPTX](https://docs.google.com/presentation/d/1bZ7vdmS8ArI8FaSERe12CAavoOyvut5mb_DrAyleek4/edit?usp=sharing)
 - [Prototype](https://www.figma.com/file/wF99gStSlo5mO8d03M1Tat/Just-Play?node-id=6%3A3)
-- [UserFlow](https://www.figma.com/file/K8ZyGDBIQeuiWOiMmWCczJ/User-flow-Proyect_php?node-id=0%3A1)
+- [UserFlow](https://www.figma.com/file/pXnQMlo6iVQSkPrgn6O4bJ/User-Flow-JustPlay?node-id=0%3A1)
 
 
 ## Authors
