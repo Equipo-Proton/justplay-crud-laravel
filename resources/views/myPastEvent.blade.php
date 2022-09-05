@@ -14,7 +14,7 @@ foreach ($eventsOfUser as $eventOfUser) {
 $countEventsUser = count($pastEvents);
 ?>
 
-<p>You have attended {{ $countEventsUser }} events.</p>
+<p class="text-center">You have attended {{ $countEventsUser }} events.</p>
 
 <div class="my_events_page inline-flex mx-2 ">
   <div class="My Events  ml-0 mr-20 p-3 hover:font-bold">
