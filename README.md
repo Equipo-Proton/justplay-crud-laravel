@@ -142,6 +142,7 @@ To execute tests uncomment 2 lines of "phpunit.xml":
 - [Presentation PPTX](https://docs.google.com/presentation/d/1bZ7vdmS8ArI8FaSERe12CAavoOyvut5mb_DrAyleek4/edit?usp=sharing)
 - [Prototype](https://www.figma.com/file/wF99gStSlo5mO8d03M1Tat/Just-Play?node-id=6%3A3)
 - [UserFlow](https://www.figma.com/file/pXnQMlo6iVQSkPrgn6O4bJ/User-Flow-JustPlay?node-id=0%3A1)
+- [Emails](https://docs.google.com/presentation/d/1TGCLnGaKJa7cGVeS_zNEj4AZEE8Ci6Nq49nlLXrR3l8/edit?usp=sharing)
 
 
 ## Authors
