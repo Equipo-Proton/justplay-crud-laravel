@@ -17,11 +17,11 @@ $countEventsUser = count($currentEvents);
 
 <p>You are subscribed to {{ $countEventsUser }} at this moment.</p>
 
-<div class="my_events_page inline-flex mx-2 ">
-  <div class="My Events  ml-0 mr-20 p-3 hover:font-bold">
-    <button type="button">My Events</button>
+<div class="my_events_page d-flex justify-content-around my-4">
+  <div class="My Events font-extrabold hover:font-bold">
+    <button type="button" class="">My Events</button>
   </div>
-  <div class="Past Events ml-20 p-3 hover:font-bold">
+  <div class="Past Events  hover:font-bold">
     <a href="{{ route('myPastEvents') }}"><button type="button">Past Events</button></a>
   </div>
 </div>

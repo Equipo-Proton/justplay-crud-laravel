@@ -16,11 +16,11 @@ $countEventsUser = count($pastEvents);
 
 <p>You have attended {{ $countEventsUser }} events.</p>
 
-<div class="my_events_page inline-flex mx-2 ">
-  <div class="My Events  ml-0 mr-20 p-3 hover:font-bold">
+<div class="my_events_page d-flex justify-content-around my-4">
+  <div class="My Events hover:font-bold">
     <a href="{{ route('myEvents') }}"><button type="button">My Events</button></a>
   </div>
-  <div class="Past Events ml-20 p-3 hover:font-bold">
+  <div class="Past Events font-extrabold hover:font-bold">
     <button type="button">Past Events</button>
   </div>
 </div>
