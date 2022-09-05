@@ -22,7 +22,7 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
       <div class="p-5">
          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-dark" id="title">{{ $event->title }}</h5>
          <p class="mb-4 font-normal text-black-700 dark:text-black-400" id="description">{{ $event->description }}</p>
-         <div class="buttons">
+         <div class="buttons d-flex justify-content-around">
             @if(!Auth::user() || (Auth::check() && !Auth::user()->event->contains($event->id)))
             <a href="{{ route('inscribe', $event->id) }}" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                Join

@@ -5,7 +5,13 @@
 @section('content')
 
 <?php
-$countEventsUser = count($eventsOfUser);
+$pastEvents = [];
+foreach ($eventsOfUser as $eventOfUser) {
+  if ($eventOfUser->event_date < now()) {
+    array_push($pastEvents, $eventOfUser);
+  }
+}
+$countEventsUser = count($pastEvents);
 ?>
 
 <p class="text-center" style="padding-top: 24px; font-size:24px" >You have attended {{ $countEventsUser }} events.</p>
