@@ -104,6 +104,14 @@ To execute tests uncomment 2 lines of "phpunit.xml":
 - OK (8 tests, 13 assertions)
 
 
+## 🛠️ Prototype
+
+<p align="center"> 
+<img src="./public/img/desktophome.jpg" width=25%>
+<img src="./public/img/movilhome.jpg" width=25%>
+</p>
+
+
 ## Work methodology
 
 - TDD
