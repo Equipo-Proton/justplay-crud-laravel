@@ -35,7 +35,7 @@ $numberOfUsers = count($eventOfUser->user);
 $currentSpaces = $eventSpaces - $numberOfUsers;
 ?>
   @if ($eventOfUser->event_date > now())
-  <section class="flex flex-col items-center mx-2 md:flex-row my-4">
+  <section id="centerBox" class="flex justify-center flex-col items-center  md:flex-row">
     <div class="card m-2">
       <img class="object-cover w-full h-200 rounded-t-sm ms:h-auto sm:w-48 sm:rounded-none md:rounded-none sm p-0 card-img" src="{{ $eventOfUser->img }}" alt="Event Image">
       <div class="card-img-overlay text-white flex justify-end items-end">
