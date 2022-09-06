@@ -13,7 +13,7 @@
               <h2 class="text-2xl ml-8">{{ $event->title }}</h2>
               <div class="flex w-full justify-between">
                 <p class="ml-8">{{ $event->event_date }}</p>
-                <p class="mr-8">{{ $event->spaces }} cupos</p>
+                <p class="mr-8">{{ $event->spaces }} places </p>
               </div>
             </figcatpion>
         </figure>

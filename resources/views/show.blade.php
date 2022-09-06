@@ -16,7 +16,7 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
       <div class="rounded-t-lg" id="imgDiv" style="background-image: url('{{ $event->img }}'); opacity: 0.8; background-size: 100% 100%;">
          <div class="timeSpaces">
             <div class="fs-4 text-white">{{ $event->event_date }}</div>
-            <div class="fs-4 text-white">Quedan {{ $currentSpaces }} cupos</div>
+            <div class="fs-4 text-white">{{ $currentSpaces }} places left</div>
          </div>
       </div>
       <div class="px-5 py-1">

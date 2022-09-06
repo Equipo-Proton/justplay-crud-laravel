@@ -17,7 +17,7 @@
           <h2 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-black">{{ $event->title }}</h2>
         </a>
         <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->event_date }}</p>
-        <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->spaces }} cupos</p>
+        <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->spaces }} places</p>
         <div class="d-flex">
            
         </div>
