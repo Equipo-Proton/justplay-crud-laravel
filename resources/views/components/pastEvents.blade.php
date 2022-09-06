@@ -9,7 +9,7 @@
       </button>
       </a>
       <a href="{{ route('showEvent', $event->id) }}">
-        <img class="rounded-t-lg p-0" src="{{ $event->img }}" alt="" />
+        <img style=" filter:grayscale(100%)" class="rounded-t-lg p-0" src="{{ $event->img }}" alt="" />
       </a>
     </div> 
     <div class="p-3">
