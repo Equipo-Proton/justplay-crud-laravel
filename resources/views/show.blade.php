@@ -24,9 +24,13 @@ $currentSpaces = $eventSpaces - $numberOfUsers;
          <p class="mb-4 font-normal text-black-700 dark:text-black-400" id="description">{{ $event->description }}</p>
          <div class="buttons d-flex justify-content-around">
             @if(!Auth::user() || (Auth::check() && !Auth::user()->event->contains($event->id)))
+            @if ($event->date > now())
+               
+      
             <a href="{{ route('inscribe', $event->id) }}" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                Join
             </a>
+            @endif
             @endif
             <a href="{{ route('home') }}" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                Back
