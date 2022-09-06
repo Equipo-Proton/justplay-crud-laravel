@@ -20,7 +20,7 @@ class EventsController extends Controller
     public function index()
     {
         $events = Event::where('event_date', '>', now())
-            ->orderBy('event_date', 'DESC')->paginate(6);
+            ->orderBy('event_date', 'ASC')->paginate(6);
 
         $events = Event::getTotalUsersOfEvent($events);
 
@@ -123,7 +123,7 @@ class EventsController extends Controller
 
     public function getPastEvents()
     {
-        $events = Event::where('event_date', '<', now())
+        $events = Event::where('event_date', '<=', now())
             ->orderBy('event_date', 'DESC')->paginate(6);
 
         return view('pastEvents', compact('events'));
