@@ -14,13 +14,13 @@
     </div>
     <div class="d-flex flex-column justify-content-end p-3">
       
-      <div>
+    <div>
       <a href="#">
         <h2 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-black">{{ $event->title }}</h2>
       </a>
       <p class="mb-1  text-black-700 dark:text-black-400">{{ $event->event_date }}</p>
       <p class="mb-1  text-black-700 dark:text-black-400">Quedan {{ $event->spaces }} cupos</p>
-      </div>  
+    </div>  
       
       <div class="d-flex">
       @if(($event->spaces > 0 && !Auth::user()) || ($event->spaces > 0 && Auth::check() && !Auth::user()->event->contains($event->id)))
@@ -37,12 +37,22 @@
           </a>
         @endif
 
-        @if(Auth::check() && Auth::user()->isAdmin)
+        @if(Auth::check() && Auth::user()->isAdmin && ($event->carousel == 0))
           <form action="{{ route('feature', ['id' => $event->id]) }}" method="POST">
           @method ('PATCH')
           @csrf
           <button type="submit" class="focus:outline-none  bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm p-2 mr-1 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-green-800 flex">
             <img src="{{ asset('img/favorite.png') }}" alt="favorite event" class="w-5 h-auto p-0">
+          </button>
+          </form>
+        @endif
+
+        @if(Auth::check() && Auth::user()->isAdmin && ($event->carousel == 1))
+          <form action="{{ route('notfeature', ['id' => $event->id]) }}" method="POST">
+          @method ('PATCH')
+          @csrf
+          <button type="submit" class="focus:outline-none  bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm p-2 mr-1 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-green-800 flex">
+            <img src="{{ asset('img/delete-favorite.png') }}" alt="favorite event" class="w-5 h-auto p-0">
           </button>
           </form>
         @endif

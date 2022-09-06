@@ -35,6 +35,7 @@ Route::post('/', [EventsController::class, 'store'])->name('storeEvent')->middle
 Route::get('/edit/{id}', [EventsController::class, 'edit'])->name('editEvent')->middleware('isadmin', 'auth');
 Route::patch('/update/{id}', [EventsController::class, 'update'])->name('updateEvent')->middleware('isadmin', 'auth');
 Route::patch('/feature/{id}', [EventsController::class, 'feature'])->name('feature')->middleware('isadmin', 'auth');
+Route::patch('/notfeature/{id}', [EventsController::class, 'notfeature'])->name('notfeature')->middleware('isadmin', 'auth');
 
 // show
 Route::get('/show/{id}', [EventsController::class, 'show'])->name('showEvent');

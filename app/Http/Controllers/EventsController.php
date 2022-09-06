@@ -176,4 +176,10 @@ class EventsController extends Controller
         Event::where('id', '=', $id)->update(array('carousel' => '1'));
         return redirect()->route('home');
     }
+
+     public function notfeature($id)
+    {
+        Event::where('id', '=', $id)->update(array('carousel' => '0'));
+        return redirect()->route('home');
+    }
 }
